@@ -235,5 +235,32 @@ namespace BLL.Tests
             var expected = new List<char>() { '1', '4', '\r', '\n', '4' };
             Assert.IsTrue(actual.SequenceEqual(expected));
         }
+
+
+        [TestMethod()]
+        public void ParseNumberFrom2DCharList_Give_3sss2n1ss4_Return_3_2_n_1_4()
+        {
+            //Assign 
+            var data = new List<List<char>>()
+            {
+                new List<char>() { '-', '-' , '-',' ', ' ', ' ', '-', '-', '-', '\r', '\n' },
+                new List<char>() { ' ', '/' , ' ',' ', ' ', ' ', ' ', '_', '|', '\r', '\n' },
+                new List<char>() { ' ', '\\', ' ',' ', ' ', ' ', '|', ' ', ' ', '\r', '\n' },
+                new List<char>() { '-', '-' , ' ',' ', ' ', ' ', '-', '-', '-', '\r', '\n' },
+                new List<char>() { '|', ' ', ' ', '|', ' ', ' ', ' ', '|', '\r', '\n' },
+                new List<char>() { '|', ' ', ' ', '|', '_', '_', '_', '|', '\r', '\n' },
+                new List<char>() { '|', ' ', ' ', ' ', ' ', ' ', ' ', '|', '\r', '\n' },
+                new List<char>() { '|', ' ', ' ', ' ', ' ', ' ', ' ', '|'},
+
+
+            };
+            var controller = new ParseController();
+
+            //Act
+            var actual = controller.ParseNumberFrom2DCharList(data);
+            //Assert
+            var expected = new List<char>() { '3', '2', '\r', '\n', '1', '4' };
+            Assert.IsTrue(actual.SequenceEqual(expected));
+        }
     }
 }
