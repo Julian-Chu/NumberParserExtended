@@ -18,25 +18,12 @@ namespace BLL
             {
                 if (targetChars.Contains(chars[row][col]))
                 {
-                    var features = new List<char>();
-                    features.Add(chars[row][col]);
-                    features.Add(chars[row + 1][col]);
-                    features.Add(chars[row + 2][col]);
-                    features.Add(chars[row + 3][col]);
+                    List<char> features = GetFeatures(chars, row, col);
 
-                    if (features.SequenceEqual(new List<char>() { '-', ' ', ' ', '-' }))
-                    {
-                        char number = '3';
-                        result.Add(number);
-                        col += 3;  //number width : 3 chars
-                    }
-                    else if (features.SequenceEqual(new List<char> { '-', ' ', '|', '-' }))
-                    {
-                        char number = '2';
-                        result.Add(number);
-                        col += 3;
-                    }
+                    char number = GetNumberByFeatures(features);
+                    col += GetWidth(number);
 
+                    result.Add(number);
                 }
                 else if (chars[row][col] == '\n')
                 {
@@ -49,6 +36,41 @@ namespace BLL
             }
 
             return result;
+        }
+
+        private int GetWidth(char number)
+        {
+            switch (number)
+            {
+                case '3':
+                case '2':
+                    return 3; //width of number : 3 chars
+                default:
+                    return 1; // for unknown number
+            }
+        }
+
+        private List<char> GetFeatures(List<List<char>> chars, int row, int col)
+        {
+            var features = new List<char>();
+            features.Add(chars[row][col]);
+            features.Add(chars[row + 1][col]);
+            features.Add(chars[row + 2][col]);
+            features.Add(chars[row + 3][col]);
+            return features;
+        }
+
+        private char GetNumberByFeatures(List<char> features)
+        {
+            if (features.SequenceEqual(new List<char>() { '-', ' ', ' ', '-' }))
+            {
+                return '3';
+            }
+            else if (features.SequenceEqual(new List<char> { '-', ' ', '|', '-' }))
+            {
+                return '2';
+            }
+            return '*';
         }
     }
 }
