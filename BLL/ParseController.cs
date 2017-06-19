@@ -48,6 +48,7 @@ namespace BLL
                 case '1':
                     return 1;
                 case '4':
+                case '5':
                     return 5;
                 default:
                     return 1000; // warning for unknown number
@@ -93,6 +94,13 @@ namespace BLL
                                                              ' ' }))
             {
                 return '4';
+            }
+            else if (features.SequenceEqual(new List<char> { '-',
+                                                             '|',
+                                                             ' ',
+                                                             '_' }))
+            {
+                return '5';
             }
             else
             {
