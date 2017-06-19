@@ -66,19 +66,31 @@ namespace BLL
 
         private char GetNumberByFeatures(List<char> features)
         {
-            if (features.SequenceEqual(new List<char>() { '-', ' ', ' ', '-' }))
+            if (features.SequenceEqual(new List<char>() { '-',
+                                                          ' ',
+                                                          ' ',
+                                                          '-' }))
             {
                 return '3';
             }
-            else if (features.SequenceEqual(new List<char> { '-', ' ', '|', '-' }))
+            else if (features.SequenceEqual(new List<char> { '-',
+                                                             ' ',
+                                                             '|',
+                                                             '-' }))
             {
                 return '2';
             }
-            else if (features.SequenceEqual(new List<char> { '|', '|', '|', '|' }))
+            else if (features.SequenceEqual(new List<char> { '|',
+                                                             '|',
+                                                             '|',
+                                                             '|' }))
             {
                 return '1';
             }
-            else if (features.SequenceEqual(new List<char> { '|', '|', ' ', ' ' }))
+            else if (features.SequenceEqual(new List<char> { '|',
+                                                             '|',
+                                                             ' ',
+                                                             ' ' }))
             {
                 return '4';
             }
