@@ -18,9 +18,9 @@ namespace BLL
             {
                 if (targetChars.Contains(chars[row][col]))
                 {
-                    List<char> features = GetFeatures(chars, row, col);
+                    List<char> feature = GetFeature(chars, row, col);
 
-                    char number = GetNumberByFeatures(features);
+                    char number = GetNumberByFeatures(feature);
                     col += GetWidth(number);
 
                     result.Add(number);
@@ -40,6 +40,12 @@ namespace BLL
 
         private int GetWidth(char number)
         {
+            ///Width is how many chars in 1st row of a Number 2D char array
+            ///              v---v                       v-v
+            ///Ex: Width of  |   |  is 5 ,     Width of  --- is 3
+            ///              |___|                        /         
+            ///                  |                        \        
+            ///                  |                       --
             switch (number)
             {
                 case '3':
@@ -55,14 +61,19 @@ namespace BLL
             }
         }
 
-        private List<char> GetFeatures(List<List<char>> chars, int row, int col)
+        private List<char> GetFeature(List<List<char>> chars, int row, int col)
         {
-            var features = new List<char>();
-            features.Add(chars[row][col]);
-            features.Add(chars[row + 1][col]);
-            features.Add(chars[row + 2][col]);
-            features.Add(chars[row + 3][col]);
-            return features;
+            ///feature is chars in 1st column of a Number 2D char array
+            ///Ex: features of  |   |  are  '|' ,  features of  ---   are '-'
+            ///                 |___|       '|'                  /        ' '
+            ///                     |       ' '                  \        ' '
+            ///                     |       ' '                 --        '-'
+            var feature = new List<char>();
+            feature.Add(chars[row][col]);
+            feature.Add(chars[row + 1][col]);
+            feature.Add(chars[row + 2][col]);
+            feature.Add(chars[row + 3][col]);
+            return feature;
         }
 
         private char GetNumberByFeatures(List<char> features)
