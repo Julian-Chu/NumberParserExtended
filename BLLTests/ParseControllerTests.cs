@@ -285,7 +285,33 @@ namespace BLL.Tests
             //Act
             var actual = controller.ParseNumberFrom2DCharList(data);
             //Assert
-            var expected = new List<char>() { '3', '2', '1' ,'\r', '\n', '1', '4' , '5' };
+            var expected = new List<char>() { '3', '2', '1', '\r', '\n', '1', '4', '5' };
+            Assert.IsTrue(actual.SequenceEqual(expected));
+        }
+
+        [TestMethod()]
+        public void ParseNumberFrom2DCharList_Give_3sss2ssss1ss4sss5n1ss4sss5_Return_3_2_1_4_5_n_1_4_5()
+        {
+            //Assign 
+            char sp = ' ';
+            var data = new List<List<char>>()
+            {
+                new List<char>() { '-', '-' , '-', sp, sp, sp, '-', '-', '-', sp, sp, sp, sp, '|', sp, sp, '|', ' ', ' ', ' ', '|', sp, sp, sp, '-', '-', '-', '-', '-', '\r', '\n' },
+                new List<char>() { ' ', '/' , ' ', sp, sp, sp, ' ', '_', '|', sp, sp, sp, sp, '|', sp, sp, '|', '_', '_', '_', '|', sp, sp, sp, '|', '_', '_', '_', '\r', '\n' },
+                new List<char>() { ' ', '\\', ' ', sp, sp, sp, '|', ' ', ' ', sp, sp, sp, sp, '|', sp, sp, ' ', ' ', ' ', ' ', '|', sp, sp, sp, ' ', ' ', ' ', ' ', '|', '\r', '\n' },
+                new List<char>() { '-', '-' , ' ', sp, sp, sp, '-', '-', '-', sp, sp, sp, sp, '|', sp, sp, ' ', ' ', ' ', ' ', '|', sp, sp, sp, '_', '_', '_', '_', '|' },
+                new List<char>() { '|', sp, sp, '|', ' ', ' ', ' ', '|', sp, sp, sp, '-', '-', '-', '-', '-', '\r', '\n' },
+                new List<char>() { '|', sp, sp, '|', '_', '_', '_', '|', sp, sp, sp, '|', '_', '_', '_', '\r', '\n' },
+                new List<char>() { '|', sp, sp, ' ', ' ', ' ', ' ', '|', sp, sp, sp, ' ', ' ', ' ', ' ', '|', '\r', '\n' },
+                new List<char>() { '|', sp, sp, ' ', ' ', ' ', ' ', '|', sp, sp, sp, '_', '_', '_', '_', '|' }
+
+            };
+            var controller = new ParseController();
+
+            //Act
+            var actual = controller.ParseNumberFrom2DCharList(data);
+            //Assert
+            var expected = new List<char>() { '3', '2', '1', '4', '5', '\r', '\n', '1', '4', '5' };
             Assert.IsTrue(actual.SequenceEqual(expected));
         }
     }
