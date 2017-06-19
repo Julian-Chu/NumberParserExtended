@@ -8,7 +8,7 @@ namespace BLL.Tests
     public class ParseControllerTests
     {
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_3_Return_3()
+        public void ParseNumbers_Give_3_Return_3()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -28,7 +28,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_2_Return_2()
+        public void ParseNumbers_Give_2_Return_2()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -48,7 +48,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_1_Return_1()
+        public void ParseNumbers_Give_1_Return_1()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -68,7 +68,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_4_Return_4()
+        public void ParseNumbers_Give_4_Return_4()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -88,7 +88,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_5_Return_5()
+        public void ParseNumbers_Give_5_Return_5()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -108,7 +108,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_5s1_Return_5_1()
+        public void ParseNumbers_Give_5s1_Return_5_1()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -128,7 +128,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_4s1_Return_4_1()
+        public void ParseNumbers_Give_4s1_Return_4_1()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -148,7 +148,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_1s4_Return_1_4()
+        public void ParseNumbers_Give_1s4_Return_1_4()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -168,7 +168,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_1ss4_Return_1_4()
+        public void ParseNumbers_Give_1ss4_Return_1_4()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -188,7 +188,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_1n4_Return_1n4()
+        public void ParseNumbers_Give_1n4_Return_1n4()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -212,7 +212,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_1ss4n1s4_Return_1_4_n_4()
+        public void ParseNumbers_Give_1ss4n1s4_Return_1_4_n_4()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -238,7 +238,7 @@ namespace BLL.Tests
 
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_3sss2n1ss4_Return_3_2_n_1_4()
+        public void ParseNumbers_Give_3sss2n1ss4_Return_3_2_n_1_4()
         {
             //Assign 
             var data = new List<List<char>>()
@@ -264,7 +264,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_3sss2ssss1n1ss4sss5_Return_3_2_1_n_1_4_5()
+        public void ParseNumbers_Give_3sss2ssss1n1ss4sss5_Return_3_2_1_n_1_4_5()
         {
             //Assign 
             char sp = ' ';
@@ -290,7 +290,7 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void ParseNumberFrom2DCharList_Give_3sss2ssss1ss4sss5n1ss4sss5_Return_3_2_1_4_5_n_1_4_5()
+        public void ParseNumbers_Give_3sss2ssss1ss4sss5n1ss4sss5_Return_3_2_1_4_5_n_1_4_5()
         {
             //Assign 
             char sp = ' ';
