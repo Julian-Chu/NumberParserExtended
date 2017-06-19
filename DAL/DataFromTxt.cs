@@ -4,12 +4,12 @@ using System.IO;
 
 namespace DAL
 {
-    public class DataReader
+    public class DataFromTxt : MyDataReader
     {
 
         public string FilePath { get; set; }
 
-        public DataReader(string filePath)
+        public DataFromTxt(string filePath)
         {
             this.FilePath = filePath;
         }
@@ -22,26 +22,31 @@ namespace DAL
             try
             {
                 text = File.ReadAllText(FilePath);
+                char[] chars = text.ToCharArray();
+
+                int row = 0;
+                for (int i = 0; i < chars.Length; i++)
+                {
+                    result[row].Add(chars[i]);
+                    if (chars[i] == '\n')
+                    {
+                        result.Add(new List<char>());
+                        row += 1;
+                    }
+                }
+
+
             }
             catch (IOException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            char[] chars = text.ToCharArray();
-
-            int row = 0;
-            for (int i = 0; i < chars.Length; i++)
+            catch (ArgumentException ex)
             {
-                result[row].Add(chars[i]);
-                if (chars[i] == '\n')
-                {
-                    result.Add(new List<char>());
-                    row += 1;
-                }
+                Console.WriteLine(ex.Message);
             }
-
-
             return result;
+
         }
 
 

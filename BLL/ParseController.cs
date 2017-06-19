@@ -7,6 +7,10 @@ namespace BLL
     {
         public List<char> ParseNumberFrom2DCharList(List<List<char>> chars)
         {
+            if (chars.Count == 1)
+            {
+                return new List<char>() { 'E', 'r', 'r', 'o', 'r' };
+            }
             var result = new List<char>();
             int row = 0;
             int col = 0;

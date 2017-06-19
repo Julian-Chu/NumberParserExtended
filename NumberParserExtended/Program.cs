@@ -10,7 +10,6 @@ namespace NumberParserExtended
         static void Main(string[] args)
         {
             string filePath = @"c:\users\yulan\documents\visual studio 2015\Projects\NumberParserExtended\DAL\NumberParserExtended_Simplified.txt";
-            filePath = null;
             ShowDataFromTxt(filePath);
             Console.WriteLine();
 
@@ -25,9 +24,8 @@ namespace NumberParserExtended
 
         private static List<char> GetParsedResult(string filePath)
         {
-            DataReader reader = new DataReader(filePath);
+            MyDataReader reader = new DataFromTxt(filePath);
             var data = reader.GetData();
-
 
             ParseController controller = new ParseController();
             var result = controller.ParseNumberFrom2DCharList(data);
@@ -37,7 +35,7 @@ namespace NumberParserExtended
 
         private static void ShowDataFromTxt(string filePath)
         {
-            DataReader reader = new DataReader(filePath);
+            MyDataReader reader = new DataFromTxt(filePath);
             var data = reader.GetData();
 
             foreach (var row in data)
