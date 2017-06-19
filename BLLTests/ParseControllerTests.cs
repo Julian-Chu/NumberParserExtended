@@ -106,5 +106,25 @@ namespace BLL.Tests
             var expected = new List<char>() { '5' };
             Assert.IsTrue(actual.SequenceEqual(expected));
         }
+
+        [TestMethod()]
+        public void ParseNumberFrom2DCharList_Give_5s1_Return_5_1()
+        {
+            //Assign 
+            var data = new List<List<char>>()
+            {
+                new List<char>() { '-', '-', '-', '-', '-', ' ', '|', '\r', '\n' },
+                new List<char>() { '|', '_', '_', '_', ' ', ' ', '|', '\r', '\n' },
+                new List<char>() { ' ', ' ', ' ', ' ', '|', ' ', '|', '\r', '\n' },
+                new List<char>() { '_', '_', '_', '_', '|', ' ', '|'}
+            };
+            var controller = new ParseController();
+
+            //Act
+            var actual = controller.ParseNumberFrom2DCharList(data);
+            //Assert
+            var expected = new List<char>() { '5', '1' };
+            Assert.IsTrue(actual.SequenceEqual(expected));
+        }
     }
 }
