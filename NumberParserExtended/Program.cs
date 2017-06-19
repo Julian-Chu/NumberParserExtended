@@ -9,7 +9,7 @@ namespace NumberParserExtended
     {
         static void Main(string[] args)
         {
-            string filePath = @"c:\users\yulan\documents\visual studio 2015\Projects\NumberParserExtended\DAL\NumberParserExtended_Simplified.txt";
+            string filePath = @".\NumberParserExtended_Simplified.txt";
             ShowDataFromTxt(filePath);
             Console.WriteLine();
 
