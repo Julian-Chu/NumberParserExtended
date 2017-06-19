@@ -28,6 +28,12 @@ namespace BLL
                     {
                         char number = '3';
                         result.Add(number);
+                        col += 3;  //number width : 3 chars
+                    }
+                    else if (features.SequenceEqual(new List<char> { '-', ' ', '|', '-' }))
+                    {
+                        char number = '2';
+                        result.Add(number);
                         col += 3;
                     }
 
