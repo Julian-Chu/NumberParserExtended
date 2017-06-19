@@ -47,6 +47,8 @@ namespace BLL
                     return 3; //width of number : 3 chars
                 case '1':
                     return 1;
+                case '4':
+                    return 5;
                 default:
                     return 1000; // warning for unknown number
             }
@@ -76,7 +78,14 @@ namespace BLL
             {
                 return '1';
             }
-            return '*';
+            else if (features.SequenceEqual(new List<char> { '|', '|', ' ', ' ' }))
+            {
+                return '4';
+            }
+            else
+            {
+                return '*';
+            }
         }
     }
 }
