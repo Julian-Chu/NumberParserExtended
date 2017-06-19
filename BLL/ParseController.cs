@@ -28,12 +28,17 @@ namespace BLL
                 else if (chars[row][col] == '\n')
                 {
                     row += 4;
+                    col = 0;
+                    result.Add('\r');
+                    result.Add('\n');
                 }
                 else
                 {
                     col++;
                 }
             }
+
+            result.RemoveRange(result.Count - 2, 2);
 
             return result;
         }
