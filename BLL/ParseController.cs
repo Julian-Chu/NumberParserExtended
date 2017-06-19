@@ -45,8 +45,10 @@ namespace BLL
                 case '3':
                 case '2':
                     return 3; //width of number : 3 chars
+                case '1':
+                    return 1;
                 default:
-                    return 1; // for unknown number
+                    return 1000; // warning for unknown number
             }
         }
 
@@ -69,6 +71,10 @@ namespace BLL
             else if (features.SequenceEqual(new List<char> { '-', ' ', '|', '-' }))
             {
                 return '2';
+            }
+            else if (features.SequenceEqual(new List<char> { '|', '|', '|', '|' }))
+            {
+                return '1';
             }
             return '*';
         }
