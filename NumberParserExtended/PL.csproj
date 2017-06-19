@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{E7C9F343-7B02-4F66-8CDB-3E82E81E322B}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{C799A7BA-BC55-4D5A-8F17-FFEB0C2BF8C4}</Project>
       <Name>DAL</Name>
