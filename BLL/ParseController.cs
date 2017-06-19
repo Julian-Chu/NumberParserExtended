@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace BLL
 {
-    public class ParseController
+    public class ParseController : IParseController
     {
-        public List<char> ParseNumberFrom2DCharList(List<List<char>> chars)
+        public List<char> ParseNumbers(List<List<char>> chars)
         {
             if (chars.Count == 1)
             {

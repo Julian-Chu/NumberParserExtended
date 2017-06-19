@@ -21,7 +21,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '3' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -41,7 +41,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '2' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -61,7 +61,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '1' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -81,7 +81,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '4' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -101,7 +101,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '5' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -121,7 +121,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '5', '1' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -141,7 +141,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '4', '1' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -161,7 +161,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '1', '4' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -181,7 +181,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '1', '4' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -205,7 +205,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '1', '\r', '\n', '4' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -230,7 +230,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '1', '4', '\r', '\n', '4' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -257,7 +257,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '3', '2', '\r', '\n', '1', '4' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -283,7 +283,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '3', '2', '1', '\r', '\n', '1', '4', '5' };
             Assert.IsTrue(actual.SequenceEqual(expected));
@@ -309,7 +309,7 @@ namespace BLL.Tests
             var controller = new ParseController();
 
             //Act
-            var actual = controller.ParseNumberFrom2DCharList(data);
+            var actual = controller.ParseNumbers(data);
             //Assert
             var expected = new List<char>() { '3', '2', '1', '4', '5', '\r', '\n', '1', '4', '5' };
             Assert.IsTrue(actual.SequenceEqual(expected));

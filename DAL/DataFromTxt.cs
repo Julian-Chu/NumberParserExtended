@@ -6,13 +6,13 @@ namespace DAL
 {
     public class DataFromTxt : MyDataReader
     {
-
         public string FilePath { get; set; }
 
         public DataFromTxt(string filePath)
         {
             this.FilePath = filePath;
         }
+
         public List<List<char>> GetData()
         {
             var result = new List<List<char>>();
@@ -34,8 +34,6 @@ namespace DAL
                         row += 1;
                     }
                 }
-
-
             }
             catch (IOException ex)
             {
@@ -46,9 +44,6 @@ namespace DAL
                 Console.WriteLine(ex.Message);
             }
             return result;
-
         }
-
-
     }
 }

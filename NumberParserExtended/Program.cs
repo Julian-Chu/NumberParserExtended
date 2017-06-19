@@ -27,8 +27,8 @@ namespace NumberParserExtended
             MyDataReader reader = new DataFromTxt(filePath);
             var data = reader.GetData();
 
-            ParseController controller = new ParseController();
-            var result = controller.ParseNumberFrom2DCharList(data);
+            IParseController controller = new ParseController();
+            var result = controller.ParseNumbers(data);
 
             return result;
         }
